@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>盛达质量管理体系</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #f4f6f9;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 12px; }
+
+/* 标题区 */
+.header {
+  background: linear-gradient(135deg, #0073C2, #005999);
+  color: #fff;
+  padding: 20px 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.header h1 { font-size: 22px; font-weight: 600; }
+.header p { font-size: 13px; opacity: 0.9; margin-top: 4px; }
+
+/* 区块通用 */
+.section { background: #fff; border-radius: 10px; padding: 16px; margin-bottom: 14px; }
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0073C2;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #0073C2;
+}
+
+/* 流程图 */
+.flow-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+.flow-svg { display: block; }
+
+/* 不合格处置 */
+.disposal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+.disposal-item {
+  background: #fff3f3;
+  border: 2px solid #ff4d4f;
+  border-radius: 8px;
+  padding: 12px 10px;
+  text-align: center;
+}
+.disposal-item .icon { font-size: 24px; margin-bottom: 4px; }
+.disposal-item .label { font-weight: 600; color: #d40000; font-size: 15px; }
+.disposal-item .desc { font-size: 12px; color: #666; margin-top: 4px; }
+
+/* 处罚区 */
+.punish-supplier {
+  background: #fff7e6;
+  border: 2px solid #ff8c00;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+.punish-employee {
+  background: #fff7ff;
+  border: 2px solid #9254de;
+  border-radius: 10px;
+  padding: 14px;
+}
+.punish-section-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.punish-supplier .punish-section-title { color: #d46b00; }
+.punish-employee .punish-section-title { color: #6927b0; }
+.punish-list { list-style: none; }
+.punish-list li {
+  padding: 7px 0;
+  border-bottom: 1px dashed #e0e0e0;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+}
+.punish-list li:last-child { border-bottom: none; }
+.punish-list .tag {
+  flex-shrink: 0;
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.tag-red { background: #fff1f0; color: #cf1322; }
+.tag-orange { background: #fff7e6; color: #d46b00; }
+.tag-purple { background: #f9f0ff; color: #6927b0; }
+.tag-blue { background: #e6f7ff; color: #0073C2; }
+
+/* 质量记录 */
+.record-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.record-table th {
+  background: #0073C2;
+  color: #fff;
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 600;
+}
+.record-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.record-table tr:nth-child(even) td { background: #f9fbff; }
+.record-table .code { color: #0073C2; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- 标题 -->
+<div class="header">
+  <h1>盛达质量管理体系</h1>
+  <p>供应商来料 → 成品出货 · 全流程质量管控</p>
+</div>
+
+<!-- 主流程 -->
+<div class="section">
+  <div class="section-title">📋 主流程</div>
+  <div class="flow-wrap">
+    <svg class="flow-svg" viewBox="0 0 900 110" xmlns="http://www.w3.org/2000/svg">
+      <!-- 背景线 -->
+      <path d="M30,55 L870,55" stroke="#e0e0e0" stroke-width="3" stroke-dasharray="0"/>
+
+      <!-- 节点 -->
+      <!-- 1 -->
+      <rect x="5" y="25" width="100" height="60" rx="8" fill="#0073C2"/>
+      <text x="55" y="48" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">供应商来料</text>
+      <text x="55" y="63" text-anchor="middle" fill="#cce8ff" font-size="10">送货单+实物</text>
+      <path d="M105,55 L135,55" stroke="#0073C2" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <!-- 2 -->
+      <rect x="135" y="25" width="100" height="60" rx="8" fill="#0073C2"/>
+      <text x="185" y="48" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">IQC来料检验</text>
+      <text x="185" y="63" text-anchor="middle" fill="#cce8ff" font-size="10">按检验标准</text>
+      <path d="M235,55 L265,55" stroke="#0073C2" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <!-- 3 -->
+      <rect x="265" y="25" width="100" height="60" rx="8" fill="#0073C2"/>
+      <text x="315" y="48" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">合格入库</text>
+      <text x="315" y="63" text-anchor="middle" fill="#cce8ff" font-size="10">FIFO管理</text>
+      <path d="M365,55 L395,55" stroke="#0073C2" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <!-- 4 -->
+      <rect x="395" y="25" width="100" height="60" rx="8" fill="#0073C2"/>
+      <text x="445" y="48" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">仓储管理</text>
+      <text x="445" y="63" text-anchor="middle" fill="#cce8ff" font-size="10">防护+追溯</text>
+      <path d="M495,55 L525,55" stroke="#0073C2" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <!-- 5 -->
+      <rect x="525" y="25" width="100" height="60" rx="8" fill="#0073C2"/>
+      <text x="575" y="48" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">机加工</text>
+      <text x="575" y="63" text-anchor="middle" fill="#cce8ff" font-size="10">IPQC巡检</text>
+      <path d="M625,55 L655,55" stroke="#0073C2" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <!-- 6 -->
+      <rect x="655" y="25" width="100" height="60" rx="8" fill="#0073C2"/>
+      <text x="705" y="48" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">装配</text>
+      <text x="705" y="63" text-anchor="middle" fill="#cce8ff" font-size="10">首件确认</text>
+      <path d="M755,55 L775,55" stroke="#0073C2" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <!-- 7 调试/FQC/OQC 合并节点 -->
+      <rect x="775" y="10" width="100" height="90" rx="8" fill="#004a99"/>
+      <text x="825" y="36" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">调试+FQC</text>
+      <text x="825" y="50" text-anchor="middle" fill="#cce8ff" font-size="10">终检</text>
+      <text x="825" y="66" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">OQC出货</text>
+      <text x="825" y="80" text-anchor="middle" fill="#cce8ff" font-size="10">验货</text>
+      <path d="M805,55 L830,55" stroke="#0073C2" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <!-- 8 成品发货 -->
+      <rect x="795" y="25" width="90" height="60" rx="8" fill="#005999" stroke="#fff" stroke-width="1"/>
+      <text x="840" y="48" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">成品发货</text>
+      <text x="840" y="63" text-anchor="middle" fill="#cce8ff" font-size="10">客户验收</text>
+
+      <!-- 不合格分支（左侧向下） -->
+      <path d="M185,85 L185,100 L100,100 L100,90" stroke="#ff4d4f" stroke-width="1.5" stroke-dasharray="4,2" fill="none"/>
+      <circle cx="185" cy="85" r="4" fill="#ff4d4f"/>
+      <rect x="60" y="90" width="80" height="20" rx="5" fill="#ff4d4f"/>
+      <text x="100" y="104" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">不合格→处置</text>
+
+      <defs>
+        <marker id="arrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 Z" fill="#0073C2"/>
+        </marker>
+      </defs>
+    </svg>
+  </div>
+  <p style="font-size:12px;color:#888;text-align:center;margin-top:6px;">← 左右滑动查看完整流程 →</p>
+</div>
+
+<!-- 不合格处置5种方式 -->
+<div class="section">
+  <div class="section-title">⚠️ 不合格处置（5种方式）</div>
+  <div class="disposal-grid">
+    <div class="disposal-item">
+      <div class="icon">🔧</div>
+      <div class="label">返工</div>
+      <div class="desc">重新加工达到标准</div>
+    </div>
+    <div class="disposal-item">
+      <div class="icon">🔨</div>
+      <div class="label">返修</div>
+      <div class="desc">修复后使用</div>
+    </div>
+    <div class="disposal-item">
+      <div class="icon">♻️</div>
+      <div class="label">回用</div>
+      <div class="desc">降级或变通使用</div>
+    </div>
+    <div class="disposal-item">
+      <div class="icon">⚡</div>
+      <div class="label">让步接收</div>
+      <div class="desc">特批接受（按90%结算）</div>
+    </div>
+    <div class="disposal-item">
+      <div class="icon">🗑️</div>
+      <div class="label">报废</div>
+      <div class="desc">销毁，不使用</div>
+    </div>
+  </div>
+</div>
+
+<!-- 处罚标准 -->
+<div class="section">
+  <div class="section-title">🔨 处罚标准（实际工作重中之重）</div>
+
+  <!-- 供应商 -->
+  <div class="punish-supplier">
+    <div class="punish-section-title">
+      <span>🏭</span> 供应商处罚（8.1）
+    </div>
+    <ul class="punish-list">
+      <li>
+        <span class="tag tag-red">批量≥30%</span>
+        <span>批量报废/返工≥30% → 扣该批价的<strong>10%</strong>（每次最高1000元）</span>
+      </li>
+      <li>
+        <span class="tag tag-red">弄虚作假</span>
+        <span>伪造检测数据/假冒 → 罚款<strong>500-2000元</strong></span>
+      </li>
+      <li>
+        <span class="tag tag-orange">长期不重视</span>
+        <span>连续2批同样问题 / 合格率&lt;70% / 不自检即送 → <strong>1000-5000元</strong>，取消供应商资格</span>
+      </li>
+      <li>
+        <span class="tag tag-red">代为返工</span>
+        <span>盛达代为返工返修 → 按发生费用<strong>1.8倍</strong>赔偿</span>
+      </li>
+      <li>
+        <span class="tag tag-orange">让步接收</span>
+        <span>让步接收 → 按<strong>90%</strong>结算</span>
+      </li>
+      <li>
+        <span class="tag tag-blue">铸件气孔</span>
+        <span>个别→供应商承担铸件费+加工费；批量→承担<strong>全部费用</strong></span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 员工 -->
+  <div class="punish-employee">
+    <div class="punish-section-title">
+      <span>👷</span> 员工处罚（8.2）
+    </div>
+    <ul class="punish-list">
+      <li>
+        <span class="tag tag-purple">机加工/装配</span>
+        <span>返工费用自理；装配配件问题→<strong>1.8倍赔偿</strong>；客户投诉→等额罚款</span>
+      </li>
+      <li>
+        <span class="tag tag-purple">承包单位</span>
+        <span>铲刮/油漆/电器不合格 → <strong>20元/次</strong></span>
+      </li>
+      <li>
+        <span class="tag tag-blue">质检员</span>
+        <span>漏检→<strong>扣5分/次</strong>；批量漏检→<strong>扣10分/次</strong>；严重失职→<strong>扣50分+绩效考核0分+调离</strong></span>
+      </li>
+      <li>
+        <span class="tag tag-purple">仓库</span>
+        <span>错领混料→<strong>扣5分/次</strong>；未FIFO→<strong>扣10分/次</strong>；防护不到位→<strong>扣10分+物料原价20%</strong></span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- 质量记录表格 -->
+<div class="section">
+  <div class="section-title">📁 质量记录表格清单</div>
+  <table class="record-table">
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>表单名称</th>
+        <th>表单编号</th>
+        <th>保存期限</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>供应商来料检验记录表</td><td class="code">QR-01</td><td>2年</td></tr>
+      <tr><td>2</td><td>制程巡检记录表（IPQC）</td><td class="code">QR-02</td><td>2年</td></tr>
+      <tr><td>3</td><td>成品检验记录表（FQC）</td><td class="code">QR-03</td><td>3年</td></tr>
+      <tr><td>4</td><td>出货检验记录表（OQC）</td><td class="code">QR-04</td><td>3年</td></tr>
+      <tr><td>5</td><td>不合格品处置记录表</td><td class="code">QR-05</td><td>3年</td></tr>
+      <tr><td>6</td><td>质量异常处理单</td><td class="code">QR-06</td><td>3年</td></tr>
+      <tr><td>7</td><td>纠正/预防措施报告（8D/CAR）</td><td class="code">QR-07</td><td>3年</td></tr>
+      <tr><td>8</td><td>供应商质量评估表</td><td class="code">QR-08</td><td>2年</td></tr>
+      <tr><td>9</td><td>量具检定/校准记录</td><td class="code">QR-09</td><td>3年</td></tr>
+      <tr><td>10</td><td>培训记录（质量意识/技能）</td><td class="code">QR-10</td><td>长期</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div style="text-align:center;color:#aaa;font-size:11px;padding:10px 0 20px;">
+  盛达质量管理体系 · 内部文件 · 仅供参考
+</div>
+
+</div>
+</body>
+</html>
